@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url(/assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Work Sans Italic';
+    src: url(/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
+}
+
+:root {
+    --clr-neutral-900: hsl(0, 0%, 100%);
+    
+    --clr-accent-700: hsl(275, 100%, 97%);
+    --clr-accent-600: hsl(281, 82%, 71%);
+    --clr-accent-500: hsl(292, 16%, 49%);
+    --clr-accent-400: hsl(292, 42%, 14%);
+
+    --fs-regular: 1rem;
+    --fs-large: 1.125rem;
+    --fs-xlarge: 3.5rem;
+
+    --fw-normal: 400;
+    --fw-semi: 600;
+    --fw-bold: 700;
+
+    --ff-primary: 'Work Sans', sans-serif;
+    --ff-secondary: 'Work Sans Italic', sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* styling starts here */
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-normal);
+    background-color: var(--clr-accent-700);
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+picture {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 232px;
+}
+
+@media screen and (min-width: 378px) {
+    picture {
+        height: 320px;
+    }
+}
+
+picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 1.5rem;
+    background-color: var(--clr-neutral-900);
+    margin: 150px 1rem;
+    z-index: 100;
+    text-align: left;
+    border-radius: .5rem;
+    max-width: 600px;
+}
+
+.faq-container .question {
+    color: var(--clr-accent-400);
+}
+
+.faq-container .answer {
+    color: var(--clr-accent-500);
+    font-size: 14px;
+}
+
+.title-callout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.title-callout  img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question:hover {
+    color: var(--clr-accent-600);
+    transition: .3s ease all;
+}
+
+.question h4 {
+    font-weight: var(--fw-semi);
+}
+
+
+
+.question img {
+    margin-left: 1.5rem;
+}
+
+.divider {
+    background-color: var(--clr-accent-700);
+    height: 1px;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
